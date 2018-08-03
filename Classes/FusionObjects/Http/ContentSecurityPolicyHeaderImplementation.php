@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace Nieuwenhuizen\ContentSecurityPolicy\FusionObjects\Http;
 
 use Neos\Fusion\FusionObjects\Http\ResponseHeadImplementation;
-use Nieuwenhuizen\ContentSecurityPolicy\ContentSecurity\ContentSecurityPolicyImplementation;
 use Neos\Flow\Annotations as Flow;
+use Nieuwenhuizen\ContentSecurityPolicy\ContentSecurity\ContentSecurityPolicyImplementation;
 
 class ContentSecurityPolicyHeaderImplementation extends ResponseHeadImplementation
 {

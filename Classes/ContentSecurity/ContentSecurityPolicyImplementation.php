@@ -49,6 +49,10 @@ class ContentSecurityPolicyImplementation extends Directive
         $csp = '';
 
         array_walk($this->configuration['default'], function (array $item, string $key) use (&$csp) {
+            if (array_key_exists($key, $this->configuration['custom'])) {
+                $item = array_merge($item, $this->configuration['custom'][$key]);
+            }
+
             if ($this->isValidDirective($key)) {
                 $csp .= "$key ";
                 foreach ($item as $policy) {

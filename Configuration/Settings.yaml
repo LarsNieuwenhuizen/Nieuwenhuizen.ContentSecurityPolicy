@@ -21,10 +21,8 @@ Nieuwenhuizen:
             - "'self'"
           script-src:
             - "'self'"
-            - 'data:'
-            - '{nonce}'
           style-src:
             - "'self'"
-            - "'unsafe-inline'"
           font-src:
             - "'self'"
+        custom: []
