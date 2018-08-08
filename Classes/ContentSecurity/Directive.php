@@ -3,8 +3,15 @@ declare(strict_types=1);
 
 namespace Nieuwenhuizen\ContentSecurityPolicy\ContentSecurity;
 
+use Neos\Flow\Annotations as Flow;
 use ReflectionClass;
 
+/**
+ * Class Directive
+ *
+ * @package Nieuwenhuizen.ContentSecurityPolicy
+ * @Flow\Scope("prototype")
+ */
 abstract class Directive
 {
 
@@ -73,7 +80,7 @@ abstract class Directive
      * @return bool
      * @throws \ReflectionException
      */
-    public function isValidDirective(string $directive): bool
+    public static function isValidDirective(string $directive): bool
     {
         $validDirectives = (new ReflectionClass(static::class))->getConstants();
 

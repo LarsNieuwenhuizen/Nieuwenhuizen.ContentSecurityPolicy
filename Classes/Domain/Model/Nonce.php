@@ -41,4 +41,12 @@ class Nonce
         }
         return $this->value;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->value;
+    }
 }

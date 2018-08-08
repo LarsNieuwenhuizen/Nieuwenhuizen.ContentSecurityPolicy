@@ -1,28 +1,35 @@
 Nieuwenhuizen:
   ContentSecurityPolicy:
       enabled: true
+      report-only: false
       content-security-policy:
         default:
           base-uri:
-            - "'self'"
+            - 'self'
           connect-src:
-            - "'self'"
+            - 'self'
           default-src:
-            - "'self'"
+            - 'self'
           form-action:
-            - "'self'"
+            - 'self'
           img-src:
-            - "'self'"
+            - 'self'
           media-src:
-            - "'self'"
+            - 'self'
           frame-src:
-            - "'self'"
+            - 'self'
           object-src:
-            - "'self'"
+            - 'self'
           script-src:
-            - "'self'"
+            - 'self'
           style-src:
-            - "'self'"
+            - 'self'
           font-src:
-            - "'self'"
+            - 'self'
         custom: []
+
+Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Nieuwenhuizen.ContentSecurityPolicy: true

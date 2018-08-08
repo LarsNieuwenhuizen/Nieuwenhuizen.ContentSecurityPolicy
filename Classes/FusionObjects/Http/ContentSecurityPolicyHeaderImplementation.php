@@ -6,6 +6,7 @@ namespace Nieuwenhuizen\ContentSecurityPolicy\FusionObjects\Http;
 use Neos\Fusion\FusionObjects\Http\ResponseHeadImplementation;
 use Neos\Flow\Annotations as Flow;
 use Nieuwenhuizen\ContentSecurityPolicy\ContentSecurity\ContentSecurityPolicyImplementation;
+use Nieuwenhuizen\ContentSecurityPolicy\Factory\PolicyFactory;
 
 class ContentSecurityPolicyHeaderImplementation extends ResponseHeadImplementation
 {
@@ -17,6 +18,12 @@ class ContentSecurityPolicyHeaderImplementation extends ResponseHeadImplementati
     protected $enabled;
 
     /**
+     * @Flow\InjectConfiguration(path="content-security-policy")
+     * @var array
+     */
+    protected $configuration;
+
+    /**
      * @return array
      * @throws \Exception
      */
@@ -24,8 +31,9 @@ class ContentSecurityPolicyHeaderImplementation extends ResponseHeadImplementati
     {
         $headers = parent::getHeaders();
 
-        if (!array_key_exists('Content-Security-Policy', $headers) && $this->enabled === true) {
-            $headers['Content-Security-Policy'] = (new ContentSecurityPolicyImplementation())->generate();
+        if ($this->enabled) {
+            $policy = PolicyFactory::create($this->configuration['default'], $this->configuration['custom']);
+            $headers[$policy->getSecurityHeaderKey()] = (string)$policy;
         }
 
         return $headers;
