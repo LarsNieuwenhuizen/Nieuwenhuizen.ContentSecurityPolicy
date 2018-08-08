@@ -1,9 +1,11 @@
 {
-    "description": "",
+    "description": "Configure your content-security-policy header easily with yaml",
     "type": "neos-package",
     "name": "nieuwenhuizen/content-security-policy",
+    "license": ["MIT"],
     "require": {
-        "neos/flow": "*"
+        "neos/flow": "*",
+        "neos/fusion": "*"
     },
     "autoload": {
         "psr-4": {
