@@ -27,6 +27,32 @@ Nieuwenhuizen:
           font-src:
             - 'self'
         custom: []
+        backend:
+          base-uri:
+            - 'self'
+          connect-src:
+            - 'self'
+          default-src:
+            - 'self'
+          form-action:
+            - 'self'
+          img-src:
+            - 'self'
+          media-src:
+            - 'self'
+          frame-src:
+            - 'self'
+          object-src:
+            - 'self'
+          script-src:
+            - 'self'
+            - 'unsafe-inline'
+          style-src:
+            - 'self'
+            - 'unsafe-inline'
+          font-src:
+            - 'self'
+        custom-backend: []
 
 Neos:
   Neos:

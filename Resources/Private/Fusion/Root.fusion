@@ -1,1 +1,7 @@
-prototype(Neos.Fusion:Http.ResponseHead).@class = 'Nieuwenhuizen\\ContentSecurityPolicy\\FusionObjects\\Http\\ContentSecurityPolicyHeaderImplementation'
+prototype(Neos.Fusion:Http.ResponseHead) {
+	@class = 'Nieuwenhuizen\\ContentSecurityPolicy\\FusionObjects\\Http\\ContentSecurityPolicyHeaderImplementation'
+	context = Neos.Fusion:RawArray
+	context {
+		inBackend = ${documentNode.context.inBackend}
+	}
+}
