@@ -4,6 +4,7 @@
     "name": "nieuwenhuizen/content-security-policy",
     "license": ["MIT"],
     "require": {
+        "php": ">=7.1.1",
         "neos/flow": "*",
         "neos/fusion": "*"
     },
